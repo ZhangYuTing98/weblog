@@ -1,0 +1,24 @@
+{
+  "name": "Weblog",
+  "authors": [
+    "ZhangYuTing98 <SunWhyyou@163.com>"
+  ],
+  "description": "个人博客",
+  "main": "",
+  "keywords": [
+    "blog"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <link type="text/css" rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../public/lib/bootstrap/dist/css/bootstrap.css"/>
+    <style>
+        .avatar {
+            width: 30px;
+            height:30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                个人博客
+            </a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">首页</a>
+                </li>
+                <%
+                    if (user) {%>
+                        <li>
+                            <a href="/article/add">发表文章</a>
+                        </li>
+                <%} else {%>
+                    <li>
+                        <a href="/user/signup">注册</a>
+                    </li>
+                    <li>
+                        <a href="/user/signin">登录</a>
+                    </li>
+                <%}
+                %>
+            </ul>
+            <%
+                if (user) {%>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="">
+                                <img class="avatar" src="<%=user.avatar%>" alt="">
+                                <%=user.username%></a>
+                        </li>
+                        <li>
+                            <a href="/user/signout">退出</a>
+                        </li>
+                    </ul>
+            <%}
+            %>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <%
+        if (success) {%>
+            <div class="alert alert-success text-center" role="alert"><%=success%></div>
+        <%}
+    %>
+    <%
+        if (error) {%>
+            <div class="alert alert-danger text-center" role="alert"><%=error%></div>
+        <%}
+    %>
